@@ -1,3 +1,83 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.profile-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.profile-chirps {
+    margin-top: 20px;
+}
+.chirp {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+}
+form {
+    margin-top: 10px;
+}
+input[type="file"] {
+    margin: 10px 0;
+}
+.success-message {
+    color: green;
+    font-size: 14px;
+    margin-top: 5px;
+}
+:root {
+    --blue-light: #ebf8ff;
+    --blue-primary: #4299e1;
+    --blue-dark: #2b6cb0;
+    --blue-accent: #63b3ed;
+  }
+  
+  body {
+    background-color: var(--blue-light);
+    color: var(--blue-dark);
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .profile-container {
+    background-color: var(--blue-light);
+    border: 2px solid var(--blue-accent);
+  }
+  
+  .profile-header h1, .profile-header p {
+    color: var(--blue-dark);
+  }
+  
+  button {
+    background-color: var(--blue-primary);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--blue-dark);
+  }
+  
