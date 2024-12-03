@@ -34,7 +34,7 @@ const submit = () => {
             {{ status }}
         </div>
 
-        <form @submit.prevent="submit">
+        <form @submit.prevent="submit" class="dark:bg-blue-300 bg-opacity-50 text-black shadow-xl p-6 rounded-lg">
             <div>
                 <InputLabel for="email" value="Email" />
 

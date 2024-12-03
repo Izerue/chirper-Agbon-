@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('chirps', function (Blueprint $table) {
-            $table->foreignId('parent_chirp_id')->nullable()->constrained('chirps')->cascadeOnDelete();
+            // Modify the column to TEXT to support emojis
+            $table->text('message')->change();  // Replace 'message' with your column name
         });
     }
 
@@ -22,8 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('chirps', function (Blueprint $table) {
-            $table->dropForeign(['parent_chirp_id']);
-            $table->dropColumn('parent_chirp_id');
+            // Revert it back to string if necessary
+            $table->string('message', 255)->change();  // Adjust the type if you want to revert
         });
     }
 };

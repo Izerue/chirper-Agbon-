@@ -18,6 +18,8 @@
         "vue": "^3.4.0"
     },
     "dependencies": {
-        "dayjs": "^1.11.13"
+        "dayjs": "^1.11.13",
+        "emoji-picker-element": "^1.25.0",
+        "vue-router": "^4.5.0"
     }
 }

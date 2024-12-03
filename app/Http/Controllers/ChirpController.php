@@ -73,5 +73,17 @@ class ChirpController extends Controller
     public function destroy(Chirp $chirp)
     {
         //
+        
+            $chirp = Chirp::findOrFail($id);
+        
+            // Check if the authenticated user is the owner
+            if (auth()->id() !== $chirp->user_id) {
+                abort(403, 'Unauthorized action.');
+            }
+        
+            $chirp->delete();
+        
+            return redirect()->route('chirps.index')->with('success', 'Chirp deleted successfully!');
+        
     }
 }

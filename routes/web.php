@@ -25,7 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');  // Update profile info
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');  // Delete profile
     Route::get('/profile/{username}', [ProfileController::class, 'show'])->name('profile.show');  // View profile
-
+    Route::delete('/chirps/{id}', [ChirpController::class, 'destroy'])->name('chirps.destroy');
     // Profile Picture Update Route
     Route::post('/profile/{username}/update-picture', [ProfileController::class, 'updatePicture'])->name('profile.updatePicture');  // Upload profile picture
 });

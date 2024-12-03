@@ -24,14 +24,16 @@ const submit = () => {
     <GuestLayout>
         <Head title="Register" />
 
-        <form @submit.prevent="submit">
+        <form @submit.prevent="submit" class="dark:bg-blue-300 bg-opacity-10 text-black shadow-xl p-6 rounded-lg">
             <div>
-                <InputLabel for="name" value="Name" />
+                <!-- Ensure InputLabel is correctly closed -->
+                <InputLabel for="name" value="Name" class="text-black" />
 
+                <!-- Correctly close the TextInput tag -->
                 <TextInput
                     id="name"
                     type="text"
-                    class="mt-1 block w-full"
+                    class="mt-1 block w-full text-black"
                     v-model="form.name"
                     required
                     autofocus
@@ -42,12 +44,14 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
-                <InputLabel for="email" value="Email" />
+                <!-- Ensure InputLabel is correctly closed -->
+                <InputLabel for="email" value="Email" class="text-black" />
 
+                <!-- Correctly close the TextInput tag -->
                 <TextInput
                     id="email"
                     type="email"
-                    class="mt-1 block w-full"
+                    class="mt-1 block w-full text-black"
                     v-model="form.email"
                     required
                     autocomplete="username"
@@ -57,12 +61,14 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password" value="Password" />
+                <!-- Ensure InputLabel is correctly closed -->
+                <InputLabel for="password" value="Password" class="text-black" />
 
+                <!-- Correctly close the TextInput tag -->
                 <TextInput
                     id="password"
                     type="password"
-                    class="mt-1 block w-full"
+                    class="mt-1 block w-full text-black"
                     v-model="form.password"
                     required
                     autocomplete="new-password"
@@ -72,12 +78,14 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password_confirmation" value="Confirm Password" />
+                <!-- Ensure InputLabel is correctly closed -->
+                <InputLabel for="password_confirmation" value="Confirm Password" class="text-black" />
 
+                <!-- Correctly close the TextInput tag -->
                 <TextInput
                     id="password_confirmation"
                     type="password"
-                    class="mt-1 block w-full"
+                    class="mt-1 block w-full text-black "
                     v-model="form.password_confirmation"
                     required
                     autocomplete="new-password"
@@ -89,7 +97,7 @@ const submit = () => {
             <div class="flex items-center justify-end mt-4">
                 <Link
                     :href="route('login')"
-                    class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    class="underline text-sm text-black hover:text-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 >
                     Already registered?
                 </Link>

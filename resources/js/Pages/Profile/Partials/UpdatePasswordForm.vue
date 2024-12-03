@@ -43,7 +43,11 @@ const updatePassword = () => {
             </p>
         </header>
 
-        <form @submit.prevent="updatePassword" class="mt-6 space-y-6">
+        <!-- Form Background and Styling -->
+        <form 
+            @submit.prevent="updatePassword" 
+            class="mt-6 space-y-6 p-6 rounded-md shadow-md bg-white dark:bg-blue-300"
+        >
             <div>
                 <InputLabel for="current_password" value="Current Password" />
 
