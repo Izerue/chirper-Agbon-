@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ChirpController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -23,15 +24,11 @@ Route::middleware('auth')->group(function () {
     // Profile Routes
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');  // Edit profile
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');  // Update profile info
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');  // Delete profile
-    Route::get('/profile/{username}', [ProfileController::class, 'show'])->name('profile.show');  // View profile
-    Route::delete('/chirps/{id}', [ChirpController::class, 'destroy'])->name('chirps.destroy');
-    // Profile Picture Update Route
-    Route::post('/profile/{username}/update-picture', [ProfileController::class, 'updatePicture'])->name('profile.updatePicture');  // Upload profile picture
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');  // Delete profiles
 });
 
 Route::resource('chirps', ChirpController::class)
-    ->only(['index', 'store'])
+    ->only(['index', 'store', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
